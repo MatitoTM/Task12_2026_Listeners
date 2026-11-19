@@ -12,6 +12,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * מסך התוצאות של המשחק.
+ * מציג את הניקוד הסופי של כל אחד מהשחקנים בשתי חלוניות נפרדות,
+ * מכריז על המנצח (או על תיקו) ומאפשר חזרה למסך המשחק תוך איפוס הנתונים.
+ */
 public class EndGameActivity extends AppCompatActivity {
 
     TextView tvBlueScore, tvRedScore, tvWinner;
@@ -19,6 +24,10 @@ public class EndGameActivity extends AppCompatActivity {
     int blueScore;
     int redScore;
 
+    /**
+     * מאתחלת את מסך התוצאות, שולפת את נתוני הניקוד מתוך ה-{@link Intent} שהתקבל,
+     * מציגה אותם בחלוניות המתאימות וקובעת את הודעת המנצח וצבעה בהתאם לתוצאה.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +59,10 @@ public class EndGameActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * סוגרת את מסך התוצאות ומחזירה את המשתמש למסך המשחק הראשי,
+     * פעולה המפעילה מחדש את {@code onResume()} ומאפסת את תוצאות השחקנים.
+     */
     public void returnToGame(View view) {
         finish();
     }

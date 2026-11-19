@@ -11,6 +11,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * מסך המשחק הראשי של האפליקציה.
+ * מנהל את צבירת הנקודות של השחקן הכחול (לחיצה קצרה) ושל השחקן האדום (לחיצה ארוכה),
+ * ומעביר את הנתונים למסך התוצאות בסיום המשחק.
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
     Button blueBtn;
@@ -41,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         redBtn.setOnLongClickListener(this);
     }
 
+    /**
+     * מופעלת בכל פעם שמסך המשחק חוזר לקדמת התצוגה (למשל בעת חזרה ממסך התוצאות).
+     * מאפסת את תוצאות שני השחקנים לקראת סבב משחק חדש.
+     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -49,12 +59,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         redScore = 0;
     }
 
+    /**
+     * מטפלת באירוע של לחיצה ארוכה על הלחצן האדום (מימוש ממשק {@link View.OnLongClickListener}).
+     * מוסיפה נקודות לשחקן האדום בעת לחיצה ממושכת.
+     */
     @Override
     public boolean onLongClick(View view) {
-        redScore++;
+        redScore += 2;
         return false;
     }
 
+    /**
+     * מעבירה את המשתמש למסך התוצאות ({@link EndGameActivity})
+     * ושולחת אליו את הניקוד הסופי של שני השחקנים באמצעות {@link Intent}.
+     */
     public void endGame(View view) {
         Intent si = new Intent(this, EndGameActivity.class);
         si.putExtra("blueScore", blueScore);
