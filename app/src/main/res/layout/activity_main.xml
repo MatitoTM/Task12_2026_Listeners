@@ -42,6 +42,7 @@
             android:layout_height="0dp"
             android:layout_weight="20"
             android:backgroundTint="#000000"
+            android:onClick="endGame"
             android:text="End Game"
             android:textSize="24sp"
             android:textStyle="bold" />
