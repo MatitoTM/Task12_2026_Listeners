@@ -1,5 +1,6 @@
 package com.example.task12_2026_listeners;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
     Button blueBtn;
     Button redBtn;
@@ -37,15 +38,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        redBtn.setOnClickListener(this);
+        redBtn.setOnLongClickListener(this);
     }
 
     @Override
-    public void onClick(View view) {
+    public boolean onLongClick(View view) {
         redScore++;
+        return false;
     }
 
     public void endGame(View view) {
-
+        Intent si = new Intent(this, EndGameActivity.class);
+        si.putExtra("blueScore", blueScore);
+        si.putExtra("redScore", redScore);
+        startActivity(si);
     }
 }
