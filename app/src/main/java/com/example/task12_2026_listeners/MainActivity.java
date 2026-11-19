@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        blueScore = 0;
+        redScore = 0;
+    }
+
+    @Override
     public boolean onLongClick(View view) {
         redScore++;
         return false;
