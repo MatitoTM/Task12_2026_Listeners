@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Task12_2026_Listeners‎"
+rootProject.name = "Task12_2026_Listeners"
 include(":app")

@@ -30,7 +30,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="20"
-            android:backgroundTint="#3F51B5" />
+            android:backgroundTint="#3F51B5"
+            android:text="Click me!"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
@@ -57,7 +60,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="20"
-            android:backgroundTint="#F44336" />
+            android:backgroundTint="#F44336"
+            android:text="Long Click me!"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"

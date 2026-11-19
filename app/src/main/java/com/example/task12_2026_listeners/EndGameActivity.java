@@ -1,6 +1,7 @@
 package com.example.task12_2026_listeners;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -36,11 +37,11 @@ public class EndGameActivity extends AppCompatActivity {
 
         if (blueScore > redScore) {
             tvWinner.setText("Blue is the Winner!");
-            tvWinner.setTextColor(Integer.parseInt("#1565C0"));
+            tvWinner.setTextColor(Color.parseColor("#1565C0"));
         }
         else if (blueScore < redScore){
             tvWinner.setText("Red is the Winner!");
-            tvWinner.setTextColor(Integer.parseInt("#C62828"));
+            tvWinner.setTextColor(Color.parseColor("#C62828"));
         }
         else {
             tvWinner.setText("Its a Tie!");
